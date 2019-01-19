@@ -1,3 +1,4 @@
+/// https://www.spoj.com/problems/LASTDIG/
 #include <iostream>
 
 using namespace std;

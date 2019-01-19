@@ -1,3 +1,4 @@
+/// https://www.spoj.com/problems/LOCKER/
 #include <iostream>
 #define MOD97 1000000007
 
@@ -42,3 +43,4 @@ ll binomial_exponentiation(ll l) {
 
 	return res;
 }
+

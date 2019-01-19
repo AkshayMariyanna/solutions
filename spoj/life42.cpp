@@ -1,3 +1,4 @@
+/// https://www.spoj.com/problems/TEST/
 #include <iostream>
 
 #define ANS_TO_LIFE 42

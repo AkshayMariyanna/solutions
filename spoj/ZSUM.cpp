@@ -1,3 +1,4 @@
+/// https://www.spoj.com/problems/ZSUM/
 #include <bits/stdc++.h>
 using namespace std;
 

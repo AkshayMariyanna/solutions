@@ -1,20 +1,15 @@
+/// https://www.spoj.com/problems/PRIME1/
 #include <iostream>
 #include <cstring>
 #include <math.h>
 
 using namespace std;
 
-/*
-	Not solved 
-	TLE
-	Revisit
-*/
-
 int main() {
 	int T;
 	cin >> T;
-	bool mapOPrime[1000005];
-
+	bool mapOPrime[100005];
+	
 	while (T--) {
 		int s, e;
 		cin >> s >> e;
