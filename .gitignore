@@ -11,6 +11,8 @@
 *.userprefs
 
 # Build results
+*out
+*inp
 *.out
 *.exe
 [Dd]ebug/
