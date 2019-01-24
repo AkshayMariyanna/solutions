@@ -1,4 +1,7 @@
 //! https://codeforces.com/gym/100963/problem/J
+//! 
+//! This fails with larger numbers, due to overflow
+//! Check 100963_J.cpp
 
 fn read_input() -> (i64, i64, i64, i64) {
     let mut buf = String::new();

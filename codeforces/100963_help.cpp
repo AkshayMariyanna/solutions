@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/detail/standard_policies.hpp>
-#pragma GCC optimize("Ofast")
-#pragma GCC optimize ("unroll-loops")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+// #include <ext/pb_ds/assoc_container.hpp>
+// #include <ext/pb_ds/detail/standard_policies.hpp>
+// #pragma GCC optimize("Ofast")
+// #pragma GCC optimize ("unroll-loops")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 using ll = int64_t;
 using ld = long double;
 using ull = uint64_t;
 using namespace std;
-using namespace __gnu_pbds;
+// using namespace __gnu_pbds;
 typedef vector <int> vi;
 typedef pair <int, int> ii;
 
@@ -78,7 +78,7 @@ ll find_all_solutions (ll a, ll b, ll c, ll minx, ll miny) {
         shift_solution (x, y, a, b, -sign_a);
     ll lx2 = x;
 
-    return lx1; // max(lx1, lx2);
+    return lx1; //max(lx1, lx2); // max(lx1, lx2);
 }
 
 ll solve1 (ll n, ll m, ll a, ll k) {
@@ -102,6 +102,7 @@ ll solve1 (ll n, ll m, ll a, ll k) {
         return -1;
         //cout << "Impossible\n";
     } else {
+        // cout << x<<"\n";
         k += a * x;
         return k;
     }
@@ -127,7 +128,11 @@ ll solve2 (ll c, ll a, ll b, ll d) {
     y = -y * mult;
 
     ll origin = a * x + c; // one of the solutions
-    ll min_bound = d; //max(c, d); // the answer has to be atleast max(c, d)
+    // cout << x << "\n";
+    // cout << a << "\n";
+    // cout << c << "\n";
+    // cout << origin << "\n";
+    ll min_bound = max(c, d); // the answer has to be atleast max(c, d)
 
     ll signed_det = origin - min_bound; // signed distance from the "one of the solutions"
     ll signed_short = signed_det % lcm; // distance from one of the 2 closest solutions
@@ -147,27 +152,14 @@ int main() {
 #endif
     ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr); cout.setf(ios::fixed); cout.precision(6);
 
-    for (int i = 1; i <= 100; i++) {
-        for (int j = 1; j <= 100;j++) {
-            for (int k = 1; k <= 100; k++) {
-                for (int m = 1; m <= 100; m++) {
+    for (int i = 1; i <= 10; i++) {
+        for (int j = 1; j <= 10;j++) {
+            for (int k = 1; k <= 10; k++) {
+                for (int m = 1; m <= 10; m++) {
 	ll mau = solve1(i, j, k, m);
 	ll mak = solve2(i, j, k, m);
                     if (mau != mak) {
-                        cout << i << " " << j << " " << k << " " << m << "|" << mau << " " << mak << "\n";
-                    }
-                }
-            }
-        }
-    }
-    for (int i = 1000000000; i <= 1000000100; i++) {
-        for (int j = 1000000000; j <= 1000000100;j++) {
-            for (int k = 1000000000; k <= 1000000100; k++) {
-                for (int m = 1000000000; m <= 1000000100; m++) {
-	ll mau = solve1(i, j, k, m);
-	ll mak = solve2(i, j, k, m);
-                    if (mau != mak) {
-                        cout << i << " " << j << " " << k << " " << m << "|" << mau << " " << mak << "\n";
+                        cout << i << " " << j << " " << k << " " << m << "|" << mau << "|" << mak << "\n";
                     }
                 }
             }
