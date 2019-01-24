@@ -2,12 +2,12 @@
 
 using namespace std;
 
-typedef long long ll;
+typedef int ll;
 
 bool read_input(ll &x, ll &a, ll &y, ll &b) {
   cin >> x >> a >> y >> b;
 
-  return x != 0;
+  return a != 0;
 }
 
 ll gcd(ll a, ll b, ll &x, ll &y) {
@@ -32,7 +32,7 @@ ll max(ll a, ll b) {
 int main() {
   ll c, a, d, b;
 
-  while (read_input(c, a, d, b)) {
+  while (read_input(c, a, b, d)) {
     d += b;
     ll x, y;
     ll g = gcd(a, b, x, y);
