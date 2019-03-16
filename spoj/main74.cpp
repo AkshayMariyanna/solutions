@@ -11,7 +11,7 @@ void fib(ll n, ll & x, ll & x1) {
     x = 0; x1 = 1; return;
   }
   fib(n >> 1, x, x1);
-  ll c = (x * (2 * x1 - x)) % MOD97;
+  ll c = (x * (((((2 * x1) % MOD97 - x)) + MOD97)) % MOD97) % MOD97;
   ll d = ((x * x) % MOD97 + (x1 * x1) % MOD97) % MOD97;
   if (n & 1) {
     x = d;
@@ -21,6 +21,19 @@ void fib(ll n, ll & x, ll & x1) {
     x1 = d;
   }
 }
+
+// int main() {
+//   for (ll N = 0; N <= 100000000000; N++) {
+//     if (N > 1) {
+//       ll x, x1;
+//       fib(N + 1, x, x1);
+//       int ans = (x + x1) % MOD97;
+//       if (ans <= 0) {
+//         cout << "N=" << N << ", ans=" << ans << "\n";
+//       }
+//     }
+//   }
+// }
 
 int main() {
   int T;
