@@ -1,3 +1,5 @@
+//! https://www.spoj.com/problems/TDPRIMES/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -27,7 +29,7 @@ int main() {
             int start_idx = (start + p - 1) / p;
             int j = max(start_idx, p) * p - start;
             for (; j < S; j += p)
-                flags[k] = false;
+                flags[j] = false;
         }
         if (k == 0)
             flags[0] = flags[1] = false;
